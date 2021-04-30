@@ -183,7 +183,7 @@ Here, we can see an example from the training dataset. It shows an image of a pe
     plt.axis('off')
     plt.show()
 
-.. image:: /_static/img/classification_and_regression/dataset_sample.png
+.. image:: /img/dataset_sample.png
 
 Network
 =======
@@ -278,7 +278,7 @@ The ``callbacks`` feature also records the training logs. we can use this inform
     logs = pd.read_csv('./callbacks/log.tsv', sep='\t')
     print(logs)
 
-.. image:: /_static/img/classification_and_regression/logs.png
+.. image:: /img/logs.png
 
 .. code-block:: python
 
@@ -290,7 +290,7 @@ The ``callbacks`` feature also records the training logs. we can use this inform
     plt.title('training and validation losses')
     plt.show()
 
-.. image:: /_static/img/classification_and_regression/loss_diagram.png
+.. image:: /img/loss_diagram.png
 
 We can also evaluate the performance of the trained network (a network with the best weights) on any dataset, as below:
 
@@ -321,4 +321,4 @@ Now let's evaluate the performance of the network visually.
     plt.axis('off')
     plt.show()
 
-.. image:: /_static/img/classification_and_regression/output_sample.png
+.. image:: /img/output_sample.png
