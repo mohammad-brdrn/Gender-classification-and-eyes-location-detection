@@ -192,24 +192,24 @@ Below, we define a new class, named 'ClassifierLocalizer, which accepts a pre-tr
 
 .. code-block:: python
 
-class ClassifierLocalizer(nn.Module):
-    def __init__(self, model_name, num_classes=2):
-        super(ClassifierLocalizer, self).__init__()
-        self.num_classes = num_classes
-        
-        # create cnn model
-        model = models.__dict__[model_name](True)
-        
-        # remove fc layers and add a new fc layer
-        num_features = model.fc.in_features
-        model.fc = nn.Linear(num_features, 6) # classifier + localizer
-        self.model = model
-    
-    def forward(self, x):
-        x = self.model(x)                    # extract features from CNN
-        scores = x[:, :self.num_classes]     # class scores
-        coords = x[:, self.num_classes:]     # coordinates
-        return [scores, torch.sigmoid(coords)]   # sigmoid output is in the range of [0, 1]
+    class ClassifierLocalizer(nn.Module):
+        def __init__(self, model_name, num_classes=2):
+            super(ClassifierLocalizer, self).__init__()
+            self.num_classes = num_classes
+
+            # create cnn model
+            model = models.__dict__[model_name](True)
+
+            # remove fc layers and add a new fc layer
+            num_features = model.fc.in_features
+            model.fc = nn.Linear(num_features, 6) # classifier + localizer
+            self.model = model
+
+        def forward(self, x):
+            x = self.model(x)                    # extract features from CNN
+            scores = x[:, :self.num_classes]     # class scores
+            coords = x[:, self.num_classes:]     # coordinates
+            return [scores, torch.sigmoid(coords)]   # sigmoid output is in the range of [0, 1]
 
 Regarding the complexity of the problem, the number of the samples in the training dataset, and the similarity of the training dataset to the ImageNet dataset, we may decide to freeze some of the layers. In our current example, based on the mentioned factors, we freeze just the last fully connected layer.
 
