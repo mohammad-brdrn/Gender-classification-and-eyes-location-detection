@@ -159,7 +159,7 @@ Here, we can see an example from the training dataset. It shows an image of a pe
     plt.axis('off')
     plt.show()
 
-.. image:: /_static/img/classification_and_regression/dataset_sample.png
+.. image:: /img/dataset_sample.png
 
 Network
 =======
