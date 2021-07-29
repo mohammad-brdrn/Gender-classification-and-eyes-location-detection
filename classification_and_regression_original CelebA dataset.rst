@@ -270,7 +270,7 @@ The ``callbacks`` feature also records the training logs. we can use this inform
     plt.title('training and validation losses')
     plt.show()
 
-.. image:: /_static/img/classification_and_regression/loss_diagram.png
+.. image:: /img/loss_diagram.png
 
 We can also evaluate the performance of the trained network (a network with the best weights) on any dataset, as below:
 
