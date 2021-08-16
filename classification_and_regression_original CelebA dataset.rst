@@ -155,7 +155,7 @@ Here, we can see an example from the training dataset. It shows an image of a pe
     image_rgb = cv2.cvtColor(np.float32(image), cv2.COLOR_BGR2RGB)
     image_rgb = image_rgb * imagenet_std + imagenet_mean
     gender = 'male' if int(train_dataset[sample_number][1][0][gender_index])==1 else 'female'
-    print('Gender is: ', gender)
+    print('Gender is:', gender)
     w, h = 218, 178
     (x_L, y_L) = train_dataset[sample_number][1][1][0:2]  # The coordinates vector of the datasets starts with X_L, y_L, X_R, y_R
     (x_R, y_R) = train_dataset[sample_number][1][1][2:4]
@@ -298,7 +298,7 @@ Now let's evaluate the performance of the network visually.
     image_rgb = cv2.cvtColor(np.float32(image), cv2.COLOR_BGR2RGB)
     image_rgb = image_rgb * imagenet_std + imagenet_mean
     gender = 'male' if np.argmax(predictions[0][sample_number])==0 else 'female'
-    print('Gender is: ', gender)
+    print('Gender is:', gender)
     (x_L, y_L) = predictions[1][sample_number][0:2]*image_size
     (x_R, y_R) = predictions[1][sample_number][2:4]*image_size
     x_L, x_R = int(x_L), int(x_R)
