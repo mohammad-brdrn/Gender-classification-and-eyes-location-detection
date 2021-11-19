@@ -297,7 +297,7 @@ Now let's evaluate the performance of the network visually.
     image = image.permute(1,2,0).detach().numpy()
     image_rgb = cv2.cvtColor(np.float32(image), cv2.COLOR_BGR2RGB)
     image_rgb = image_rgb * imagenet_std + imagenet_mean
-    gender = 'male' if np.argmax(predictions[0][sample_number])==0 else 'female'
+    gender = 'male' if np.argmax(predictions[0][sample_number])==1 else 'female'
     print('Gender is:', gender)
     (x_L, y_L) = predictions[1][sample_number][0:2]*image_size
     (x_R, y_R) = predictions[1][sample_number][2:4]*image_size
