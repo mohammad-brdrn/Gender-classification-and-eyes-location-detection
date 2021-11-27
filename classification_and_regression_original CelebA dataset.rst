@@ -49,7 +49,6 @@ Training Constants
     learning_rate = 0.001
     batch_size = 32
     image_size = 224
-    valid_split_percent = 0.1
     w, h = 218, 178   # the width and the hight of original images before resizing
     momentum = 0.5
     W = 1.3 # the weight of regression loss 
