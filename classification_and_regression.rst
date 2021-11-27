@@ -92,7 +92,7 @@ The section below consists of a few lines of codes that help us download celebA 
 
     # Unzip the downloaded file 
     with zipfile.ZipFile(download_path, 'r') as ziphandler:
-    ziphandler.extractall(dataset_folder)
+        ziphandler.extractall(dataset_folder)
    
 Create a custom dataset class
 =============================
