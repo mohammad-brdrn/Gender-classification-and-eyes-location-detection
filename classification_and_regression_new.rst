@@ -128,7 +128,7 @@ Here we can see how each dataset sample looks like:
 
     print (train_dataset[0])
 
-.. image:: /_static/img/classification_and_regression/out.png
+.. image:: /img/out.png
 
 Regarding the complexity of the problem and the number of training/valid samples, we have a huge number of training/validation images. Since there are not a considerable variation between images (e.g., the eye coordinates in images do not vary considerably), using all images in the dataset is not necessary and will only increase the training time. Hence, we can seperate and use a portion of data as below:
 
@@ -169,7 +169,7 @@ Here, we can see an example from the training dataset. It shows an image of a pe
     plt.axis('off')
     plt.show()
 
-.. image:: /_static/img/classification_and_regression/dataset_sample.png
+.. image:: /img/dataset_sample.png
 
 Network
 =======
@@ -253,7 +253,7 @@ The ``callbacks`` feature of Poutyne, also used by the Experiment class, records
     logs = pd.read_csv('./saves/two_task_example/log.tsv', sep='\t')
     print(logs)
 
-.. image:: /_static/img/classification_and_regression/logs.png
+.. image:: /img/logs.png
 
 .. code-block:: python
 
@@ -265,7 +265,7 @@ The ``callbacks`` feature of Poutyne, also used by the Experiment class, records
     plt.title('training and validation losses')
     plt.show()
 
-.. image:: /_static/img/classification_and_regression/loss_diagram.png
+.. image:: /img/loss_diagram.png
 
 We can also evaluate the performance of the trained network (a network with the best weights) on any dataset, as below:
 
@@ -296,4 +296,4 @@ Now let's evaluate the performance of the network visually.
     plt.axis('off')
     plt.show()
 
-.. image:: /_static/img/classification_and_regression/output_sample.png
+.. image:: /img/output_sample.png
